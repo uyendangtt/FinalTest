@@ -10,6 +10,8 @@ from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 from pages.checkout_page import CheckoutPage
 from utils.config_reader import BASE_URL
+from utils.config_reader import BASE_USERNAME
+from utils.config_reader import BASE_PASSWORD
 
 
 
@@ -18,7 +20,7 @@ from utils.config_reader import BASE_URL
 class TestCheckout:
     def test_add_products_and_checkout(self):
         self.driver.get(BASE_URL)
-        LoginPage(self.driver).login("standard_user", "secret_sauce")
+        LoginPage(self.driver).login(BASE_USERNAME, BASE_PASSWORD)
         inventory_page = InventoryPage(self.driver)
 
         inventory_page.add_products_to_cart(3)
