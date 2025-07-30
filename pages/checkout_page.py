@@ -10,7 +10,7 @@ class CheckoutPage(BasePage):
         self.enter_text(self.driver.find_element(By.ID, "first-name"), first_name)
         self.enter_text(self.driver.find_element(By.ID, "last-name"), last_name)
         self.enter_text(self.driver.find_element(By.ID, "postal-code"), postal_code)
-        self.driver.implicitly_wait(10)  # Wait for the elements to be interactable
+        self.driver.implicitly_wait(100)  # Wait for the elements to be interactable
         self.click(self.driver.find_element(By.ID, "continue"))
  
     def complete_checkout(self):
@@ -20,4 +20,5 @@ class CheckoutPage(BasePage):
         messages = []
         messages.append(self.driver.find_element(By.CLASS_NAME, "complete-header").text)
         messages.append(self.driver.find_element(By.CLASS_NAME, "complete-text").text)
+        self.driver.implicitly_wait(500)
         return messages

@@ -30,6 +30,6 @@ class TestCheckout:
         checkout_page.complete_checkout()
         messages = checkout_page.get_confirmation_messages()
         assert "Thank you for your order!" in messages
-        assert "Your order has been dispatched" in messages
+        assert "Your order has been dispatched, and will arrive just as fast as the pony can get there!" in messages
 
  
