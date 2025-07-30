@@ -2,6 +2,8 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+from base.base_test import setup
+
 import pytest
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
