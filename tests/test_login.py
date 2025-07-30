@@ -1,8 +1,12 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import pytest
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from utils.config_reader import BASE_URL
- 
+
 @pytest.mark.usefixtures("setup")
 class TestLogin:
     def test_successful_login(self):
